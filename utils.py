@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from collections import Counter
 import pandas as pd
+import os
 
 def get_paper_titles_and_urls(url: str) -> (list, list):
     """Get paper titles and urls given a link of the cvf conference page
@@ -150,5 +151,5 @@ def make_csv_from_dict(dict1: dict, csv_path: str) -> None:
     else:
         df1 = pd.DataFrame(dict1)
 
-    df1.to_csv(title_csv_name, index=False)
+    df1.to_csv(csv_path, index=False)
         
